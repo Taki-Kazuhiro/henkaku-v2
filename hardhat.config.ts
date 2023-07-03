@@ -1,8 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 require('dotenv').config();
 
-const { API_URL_SEPOLIA, PRIVATE_KEY, API_KEY_SEPOLIA } = process.env;
-
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.18",
@@ -10,9 +8,16 @@ module.exports = {
   networks: {
     sepolia: {
       //sepolia networksへのURL
-      url: API_URL_SEPOLIA,
+      url: process.env.API_URL_SEPOLIA,
       //自分のウォレットの秘密鍵
-      accounts: [PRIVATE_KEY]
+      accounts: [process.env.PRIVATE_KEY]
+    },
+    shibuya: {
+      //shibuya networksへのURL
+      url:"https://evm.shibuya.astar.network",
+      chainId:81,
+      //自分のウォレットの秘密鍵
+      accounts:[process.env.PRIVATE_KEY],
     }
   },
   etherscan: {
