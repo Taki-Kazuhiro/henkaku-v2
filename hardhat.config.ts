@@ -9,11 +9,14 @@ module.exports = {
   defaultNetwork: "sepolia",
   networks: {
     sepolia: {
+      //sepolia networksへのURL
       url: API_URL_SEPOLIA,
+      //自分のウォレットの秘密鍵
       accounts: [PRIVATE_KEY]
     }
   },
   etherscan: {
+    //etherscanで作成したAPIキー
     apiKey: process.env.API_KEY_SEPOLIA
   }
 };
