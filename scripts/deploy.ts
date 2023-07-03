@@ -1,3 +1,4 @@
+import "@nomiclabs/hardhat-ethers"
 import { ethers } from "hardhat";
 import 'dotenv/config'
 
@@ -7,8 +8,8 @@ async function main() {
   await token.deployed();
 
   console.log("v2 token:", token.address);
-  await token.setGateKeeper(process.env.GATEKEEPER as string)
-  await token.transferOwnership(process.env.GNOSIS_OWNER as string);
+  // await token.setGateKeeper(process.env.GATEKEEPER as string)
+  // await token.transferOwnership(process.env.GNOSIS_OWNER as string);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
