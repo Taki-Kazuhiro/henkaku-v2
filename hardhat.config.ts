@@ -7,7 +7,7 @@ module.exports = {
   defaultNetwork: "sepolia",
   networks: {
     sepolia: {
-      //sepolia networksへのURL
+      //Alchemyで作成したsepolia networksへのURL
       url: process.env.API_URL_SEPOLIA,
       //自分のウォレットの秘密鍵
       accounts: [process.env.PRIVATE_KEY]
@@ -21,7 +21,22 @@ module.exports = {
     }
   },
   etherscan: {
-    //etherscanで作成したAPIキー
-    apiKey: process.env.API_KEY_SEPOLIA
+    apiKey: {
+      //etherscanで作成したAPIキー
+      sepolia: process.env.API_KEY_SEPOLIA,
+      //https://blockscout.com/shibuya/　で作成したAPIキー
+      shibuya: process.env.API_KEY_SHIBUYA
+    },
+    //shibuyaはhardhatのデフォルトサポートに含まれていないため、新しくサポート対象として追加 (https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#adding-support-for-other-networks)
+    customChains: [
+      {
+        network: "shibuya",
+        chainId: 81,
+        urls: {
+          apiURL: "https://blockscout.com/shibuya/api",
+          browserURL: "https://blockscout.com/shibuya"
+        }
+      }
+    ]
   }
 };
