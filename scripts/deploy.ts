@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 import 'dotenv/config'
 
 async function main() {
-  const Contract = await ethers.getContractFactory("HenkakuToken");
+  const Contract = await ethers.getContractFactory("SushiItems");
   const token = await Contract.deploy();
   await token.deployed();
 
