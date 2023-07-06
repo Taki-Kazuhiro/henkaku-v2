@@ -2,9 +2,12 @@
 pragma solidity ^0.8.9;
 
 // Import this file to use console.log
-import "hardhat/console.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+
+//Remixの場合、npmを使ってパッケージをインストールすることはできない。そのため、GitHubのURLを直接指定してインポートする。
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.4.2/contracts/token/ERC20/ERC20.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.4.2/contracts/access/Ownable.sol";
 
 contract HenkakuToken is ERC20, Ownable {
     uint256 private maxSupply = 1_000_000_000e18; // 1 billion henkaku

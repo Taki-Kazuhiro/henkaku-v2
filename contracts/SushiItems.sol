@@ -1,14 +1,12 @@
 // SushiItems.sol
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
+//Remixの場合、npmを使ってパッケージをインストールすることはできない。そのため、GitHubのURLを直接指定してインポートする。
+//import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.4.2/contracts/token/ERC1155/ERC1155.sol";
 
 contract SushiItems is ERC1155 {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenCounter;
 
     // コントラクトデプロイ時に１度だけ呼ばれる
     constructor() ERC1155("https://taki-kazuhiro.github.io/githubpages-sample/data{id}.json") {

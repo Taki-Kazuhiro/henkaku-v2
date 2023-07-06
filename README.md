@@ -1,2 +1,9 @@
 # 概要
-ホワイトリスト型のERC20トークンのモック。
+## HenkakuToken.sol
+ホワイトリスト型のERC20のFTモック。
+
+## SushiItems.sol
+ERC1155のSFTモック。
+
+## SampleSBT.sol
+ERC1155のSBTモック。
